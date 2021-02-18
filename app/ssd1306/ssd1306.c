@@ -215,7 +215,7 @@ void ssd1306_update_screen(void)
 }
 
 void
-ssd1306_update_screen_async(ssd1306_update_callback_t cb)
+ssd1306_update_screen_async(void)
 {
   if(_ssd1306.dma_in_prog)
   {

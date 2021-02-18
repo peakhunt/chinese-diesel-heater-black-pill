@@ -18,12 +18,10 @@ typedef enum {
     ssd1306_color_white = 0x01,
 } ssd1306_color_t;
 
-typedef void (*ssd1306_update_callback_t)(void);
-
 extern void ssd1306_init(void);
 extern void ssd1306_fill(ssd1306_color_t color);
 extern void ssd1306_update_screen(void);
-extern void ssd1306_update_screen_async(ssd1306_update_callback_t cb);
+extern void ssd1306_update_screen_async(void);
 extern void ssd1306_set_contrast(const uint8_t value);
 extern void ssd1306_set_display_on(const bool on);
 extern bool ssd1306_get_display_on(void);
