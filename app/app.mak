@@ -15,13 +15,16 @@ $(APP_DIR)/pwm.c \
 $(APP_DIR)/soft_pwm.c \
 $(APP_DIR)/adc_u.c \
 $(APP_DIR)/adc_reader.c \
+$(APP_DIR)/ssd1306/ssd1306.c \
+$(APP_DIR)/ssd1306/ssd1306_fonts.c \
 $(APP_DIR)/heater/fan.c \
 $(APP_DIR)/heater/oil_pump.c \
 $(APP_DIR)/heater/glow_plug.c \
 $(APP_DIR)/heater/settings.c \
 $(APP_DIR)/heater/ntc50.c \
-$(APP_DIR)/heater/heater.c
+$(APP_DIR)/heater/heater.c \
+$(APP_DIR)/heater/display.c
 
 
 C_SOURCES += $(APP_C_SOURCES)
-CFLAGS += -I$(APP_DIR) -I$(APP_DIR)/heater
+CFLAGS += -I$(APP_DIR) -I$(APP_DIR)/ssd1306 -I$(APP_DIR)/heater

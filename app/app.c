@@ -11,6 +11,7 @@
 #include "adc_reader.h"
 
 #include "heater.h"
+#include "display.h"
 
 void
 app_init(void)
@@ -30,6 +31,8 @@ app_init(void)
   heater_init();
 
   __enable_irq();
+
+  display_init();
 }
 
 void
