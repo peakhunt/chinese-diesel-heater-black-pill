@@ -16,6 +16,7 @@
 
 #include "heater.h"
 #include "settings.h"
+#include "utilities.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -212,33 +213,6 @@ on_off_str[] =
 // shell utilities
 //
 ////////////////////////////////////////////////////////////////////////////////
-static inline int
-fcompare(float a, float b)
-{
-  //
-  // returns -1 when a < b
-  //          1 when a > b
-  //          0 when equal
-  //
-#define FLT_EPSILON 0.000001f
-
-  float d = a - b;
-
-  if (d >= -FLT_EPSILON && d <= FLT_EPSILON)
-  {
-    return 0;
-  }
-
-  if(d < -FLT_EPSILON)
-  {
-    // a is less than b
-    return -1;
-  }
-
-  // a is bigger than b
-  return 1;
-}
-
 static inline void
 __float_to_int_1dec(float f, uint8_t* i, uint8_t* d)
 {
