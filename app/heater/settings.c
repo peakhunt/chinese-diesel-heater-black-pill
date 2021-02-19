@@ -11,7 +11,7 @@
 
 //
 //
-// sector 3. 16KB
+// sector 1. 16KB
 // looks like this is the best option we have.
 // the penalty we have to pay is we gotta
 // modify linker script
