@@ -4,7 +4,11 @@
 // simply copied from  https://github.com/afiskon/stm32-ssd1306.git
 //
 //
+#include <stdio.h>
+#include <stdarg.h>
 #include <string.h>
+#include <stdlib.h>
+
 #include "stm32f4xx_hal.h"
 #include "i2c.h"
 #include "ssd1306.h"
@@ -349,4 +353,68 @@ ssd1306_write_string(char* str, ssd1306_font_t font, ssd1306_color_t color)
 
   // Everything ok
   return *str;
+}
+
+void
+ssd1306_printf(uint8_t x, uint8_t y, ssd1306_font_t font, ssd1306_color_t color, const char* fmt, ...)
+{
+  static char print_buf[64];
+  va_list args;
+
+  ssd1306_set_cursor(x, y);
+
+  va_start(args, fmt);
+  vsnprintf(print_buf, 64, fmt, args);
+  va_end(args);
+
+  ssd1306_write_string(print_buf, font, color);
+}
+
+void
+ssd1306_line(uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, ssd1306_color_t color)
+{
+  int32_t deltaX = abs(x2 - x1);
+  int32_t deltaY = abs(y2 - y1);
+  int32_t signX = ((x1 < x2) ? 1 : -1);
+  int32_t signY = ((y1 < y2) ? 1 : -1);
+  int32_t error = deltaX - deltaY;
+  int32_t error2;
+
+  ssd1306_draw_pixel(x2, y2, color);
+
+  while((x1 != x2) || (y1 != y2))
+  {
+    ssd1306_draw_pixel(x1, y1, color);
+    error2 = error * 2;
+    if(error2 > -deltaY)
+    {
+      error -= deltaY;
+      x1 += signX;
+    }
+    else
+    {
+      /*nothing to do*/
+    }
+
+    if(error2 < deltaX)
+    {
+      error += deltaX;
+      y1 += signY;
+    }
+    else
+    {
+      /*nothing to do*/
+    }
+  }
+  return;
+}
+
+void
+ssd1306_draw_rectangle(uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, ssd1306_color_t color)
+{
+  ssd1306_line(x1,y1,x2,y1,color);
+  ssd1306_line(x2,y1,x2,y2,color);
+  ssd1306_line(x2,y2,x1,y2,color);
+  ssd1306_line(x1,y2,x1,y1,color);
+  return;
 }

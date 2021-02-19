@@ -29,5 +29,8 @@ extern void ssd1306_set_cursor(uint8_t x, uint8_t y);
 extern void ssd1306_draw_pixel(uint8_t x, uint8_t y, ssd1306_color_t color);
 extern char ssd1306_write_char(char ch, ssd1306_font_t font, ssd1306_color_t color);
 extern char ssd1306_write_string(char* str, ssd1306_font_t font, ssd1306_color_t color);
+extern void ssd1306_printf(uint8_t x, uint8_t y, ssd1306_font_t font, ssd1306_color_t color, const char* fmt, ...);
+extern void ssd1306_line(uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, ssd1306_color_t color);
+extern void ssd1306_draw_rectangle(uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, ssd1306_color_t color);
 
 #endif /* !__SSD_1306_DEF_H__ */

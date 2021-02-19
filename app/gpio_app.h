@@ -15,11 +15,11 @@ typedef enum
 {
   gpio_in_pin_pb0,
   gpio_in_pin_pb1,
-  gpio_in_pin_pb2,
   gpio_in_pin_pb3,
   gpio_in_pin_pb4,
+  gpio_in_pin_pb5,
 } gpio_in_pin_t;
-#define GPIO_MAX_INPUT    (gpio_in_pin_pb4 + 1)
+#define GPIO_MAX_INPUT    (gpio_in_pin_pb5 + 1)
 
 typedef enum
 {

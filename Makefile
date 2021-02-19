@@ -171,6 +171,7 @@ LDSCRIPT = STM32F401CCUx_FLASH.ld
 LIBS = -lc -lm -lnosys 
 LIBDIR = 
 LDFLAGS = $(MCU) -specs=nano.specs -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections
+LDFLAGS += -u _printf_float
 
 include app/app.mak
 

@@ -34,12 +34,6 @@ static gpio_input_t   _inputs[GPIO_MAX_INPUT] =
     .use_debounce = true,
   },
   {
-    .pin_name = gpio_in_pin_pb2,
-    .port = GPIOB,
-    .pin = GPIO_PIN_2,
-    .use_debounce = true,
-  },
-  {
     .pin_name = gpio_in_pin_pb3,
     .port = GPIOB,
     .pin = GPIO_PIN_3,
@@ -49,6 +43,12 @@ static gpio_input_t   _inputs[GPIO_MAX_INPUT] =
     .pin_name = gpio_in_pin_pb4,
     .port = GPIOB,
     .pin = GPIO_PIN_4,
+    .use_debounce = true,
+  },
+  {
+    .pin_name = gpio_in_pin_pb5,
+    .port = GPIOB,
+    .pin = GPIO_PIN_5,
     .use_debounce = true,
   },
 };
@@ -62,11 +62,13 @@ static gpio_input_t   _inputs[GPIO_MAX_INPUT] =
 void
 HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
+#if 0
   if(GPIO_Pin == GPIO_PIN_0 ||
      GPIO_Pin == GPIO_PIN_1 ||
      GPIO_Pin == GPIO_PIN_2 ||
      GPIO_Pin == GPIO_PIN_3 ||
-     GPIO_Pin == GPIO_PIN_4)
+     GPIO_Pin == GPIO_PIN_5)
+#endif
   {
     event_set(1 << DISPATCH_EVENT_PIN_CHANGE);
   }
