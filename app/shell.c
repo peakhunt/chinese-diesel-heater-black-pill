@@ -17,6 +17,7 @@
 #include "heater.h"
 #include "settings.h"
 #include "utilities.h"
+#include "version.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -26,8 +27,6 @@
 
 #define SHELL_MAX_COLUMNS_PER_LINE      128
 #define SHELL_COMMAND_MAX_ARGS          4
-
-#define VERSION       "Diesel Heater V0.3a"
 
 typedef void (*shell_command_handler)(ShellIntf* intf, int argc, const char** argv);
 

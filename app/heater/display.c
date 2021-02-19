@@ -6,6 +6,7 @@
 #include "gpio_app.h"
 #include "heater.h"
 #include "utilities.h"
+#include "version.h"
 
 typedef enum
 {
@@ -95,6 +96,7 @@ welcome_display(void)
   ssd1306_printf(30, 20, Font_7x10, ssd1306_color_white, "Chinese");
   ssd1306_printf(32, 30, Font_7x10, ssd1306_color_white, "Diesel");
   ssd1306_printf(32, 40, Font_7x10, ssd1306_color_white, "Heater");
+  ssd1306_printf(32, 50, Font_7x10, ssd1306_color_white, "%s", VERSION);
 }
 
 static void
