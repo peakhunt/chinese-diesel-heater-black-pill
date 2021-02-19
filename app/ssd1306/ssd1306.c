@@ -36,17 +36,20 @@ static uint8_t      _dma_page;
 // SSD1306 I2C interface
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////
-static inline void ssd1306_write_command(uint8_t byte)
+static inline void
+ssd1306_write_command(uint8_t byte)
 {
   HAL_I2C_Mem_Write(&SSD1306_I2C_PORT, SSD1306_I2C_ADDR, 0x00, 1, &byte, 1, HAL_MAX_DELAY);
 }
 
-static inline void ssd1306_write_data(uint8_t* buffer, size_t buff_size)
+static inline void
+ssd1306_write_data(uint8_t* buffer, size_t buff_size)
 {
   HAL_I2C_Mem_Write(&SSD1306_I2C_PORT, SSD1306_I2C_ADDR, 0x40, 1, buffer, buff_size, HAL_MAX_DELAY);
 }
 
-static inline void ssd1306_write_page_dma(uint8_t page)
+static inline void
+ssd1306_write_page_dma(uint8_t page)
 {
   ssd1306_write_command(0xB0 + page);    // Set the current RAM page address.
   ssd1306_write_command(0x00);
@@ -60,11 +63,24 @@ static inline void ssd1306_write_page_dma(uint8_t page)
 // I2C DMA complete callback in IRQ context
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////
-void HAL_I2C_MemTxCpltCallback(I2C_HandleTypeDef *hi2c)
+//
+// XXX
+// runs in IRQ context
+//
+void
+HAL_I2C_MemTxCpltCallback(I2C_HandleTypeDef *hi2c)
 {
   event_set(1 << DISPATCH_EVENT_I2C_DMA_COMPLETE);
 }
 
+//
+// XXX
+// this runs in user, aka mainloop, context
+// actually we really didn't have to do this
+// but I really don't like volatile.
+// volatile is simply undefinable.
+// that is not an engineering.
+//
 static void
 i2c_dma_complete(uint32_t event)
 {
