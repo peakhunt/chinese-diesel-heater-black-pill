@@ -10,9 +10,9 @@
 
 typedef struct
 {
-	const uint8_t width; 
-	uint8_t height;
-	const uint16_t *data;
+  const uint8_t width; 
+  uint8_t height;
+  const uint16_t *data;
 } ssd1306_font_t;
 
 #ifdef SSD1306_INCLUDE_FONT_6x8

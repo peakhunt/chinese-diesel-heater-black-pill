@@ -13,9 +13,10 @@
 #define SSD1306_WIDTH             128
 #define SSD1306_BUFFER_SIZE       (SSD1306_WIDTH * SSD1306_HEIGHT / 8)
 
-typedef enum {
-    ssd1306_color_black = 0x00,
-    ssd1306_color_white = 0x01,
+typedef enum 
+{
+  ssd1306_color_black = 0x00,
+  ssd1306_color_white = 0x01,
 } ssd1306_color_t;
 
 extern void ssd1306_init(void);
