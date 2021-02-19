@@ -214,14 +214,6 @@ on_off_str[] =
 //
 ////////////////////////////////////////////////////////////////////////////////
 static inline void
-__float_to_int_1dec(float f, uint8_t* i, uint8_t* d)
-{
-  uint8_t   freq10x = (uint8_t)(f * 10);
-  *i = (uint8_t)(freq10x / 10);
-  *d = (uint8_t)(freq10x - (*i * 10));
-}
-
-static inline void
 shell_prompt(ShellIntf* intf)
 {
   shell_printf(intf, "%s", _prompt);
@@ -372,7 +364,6 @@ static void
 shell_command_status(ShellIntf* intf, int argc, const char** argv)
 {
   const heater_t* heater = heater_get();
-  uint8_t   freq_int, freq_dec;
   static const char* motor_state_str[] = 
   {
     "not rotating",
@@ -380,14 +371,12 @@ shell_command_status(ShellIntf* intf, int argc, const char** argv)
     "rotating",
   };
 
-  __float_to_int_1dec(heater->oil_pump.freq, &freq_int, &freq_dec);
-
   shell_printf(intf, "\r\n");
 
   shell_printf(intf, "state : %s\r\n", heater_state_desc[heater->state]);
-  shell_printf(intf, "pump  : %s, freq %d.%d Hz\r\n",
+  shell_printf(intf, "pump  : %s, freq %.1f Hz\r\n",
       on_off_str[heater->oil_pump.on],
-      freq_int, freq_dec);
+      heater->oil_pump.freq);
   shell_printf(intf, "glow  : %s\r\n", on_off_str[heater->glow_plug.on]);
   shell_printf(intf, "fan   : %s, %s, power %d%%\r\n",
       on_off_str[heater->fan.on],
@@ -540,7 +529,6 @@ static void
 shell_command_settings(ShellIntf* intf, int argc, const char** argv)
 {
   settings_t* s = settings_get();
-  uint8_t   freq_int, freq_dec;
 
   shell_printf(intf, "\r\n");
 
@@ -553,18 +541,15 @@ shell_command_settings(ShellIntf* intf, int argc, const char** argv)
   shell_printf(intf, "6. glow plug PWM frequency         %d Hz\r\n", s->glow_plug_pwm_freq);
   shell_printf(intf, "7. glow plug PWM duty              %d %%\r\n", s->glow_plug_pwm_duty);
 
-  __float_to_int_1dec(s->oil_pump_startup_freq, &freq_int, &freq_dec);
-  shell_printf(intf, "8. oil pump startup frequency      %d.%d Hz\r\n", freq_int, freq_dec);
+  shell_printf(intf, "8. oil pump startup frequency      %.1f Hz\r\n", s->oil_pump_startup_freq);
   shell_printf(intf, "9. oil pump pulse length           %d ms\r\n", s->oil_pump_pulse_length);
 
   shell_printf(intf, "\r\n");
   for(uint8_t i = 0; i < MAX_OIL_PUMP_FAN_STEPS; i++)
   {
-    __float_to_int_1dec(s->steps[i].pump_freq, &freq_int, &freq_dec);
-
-    shell_printf(intf, "step %d, oil pump freq %d.%d Hz, Fan %d%%\r\n", 
+    shell_printf(intf, "step %d, oil pump freq %.1f Hz, Fan %d%%\r\n", 
           i,
-          freq_int, freq_dec,
+          s->steps[i].pump_freq,
           s->steps[i].fan_pwr);
   }
 }
