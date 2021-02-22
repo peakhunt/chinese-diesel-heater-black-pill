@@ -383,15 +383,8 @@ shell_command_status(ShellIntf* intf, int argc, const char** argv)
       heater->fan.pwr);
   shell_printf(intf, "step  : %d\r\n", heater->step);
 
-  {
-    int i_part, d_part;
-
-    i_part = (int)heater->outlet_temp.temp;
-    d_part = abs((heater->outlet_temp.temp - i_part) * 10);
-
-    shell_printf(intf, "outlet : %d.%d C\r\n",
-        i_part, d_part);
-  }
+  shell_printf(intf, "outlet : %.1f C\r\n", heater->outlet_temp.temp);
+  shell_printf(intf, "room   : %.1f C\r\n", heater->room_temp.temp);
 }
 
 static void
