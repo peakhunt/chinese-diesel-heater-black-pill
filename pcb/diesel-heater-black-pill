@@ -25,3 +25,7 @@ Reference, Value, Footprint, Datasheet
 "R3","2K","Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder","~"
 "R4","2K","Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder","~"
 "R14","2K","Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder","~"
+"J13","ESP-01S","Connector_PinSocket_2.54mm:PinSocket_2x04_P2.54mm_Vertical","~"
+"R15","2K","Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder","~"
+"R16","100K","Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder","~"
+"R17","100K","Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder","~"

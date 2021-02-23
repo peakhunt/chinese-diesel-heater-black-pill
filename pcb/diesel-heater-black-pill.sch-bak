@@ -696,13 +696,13 @@ Wire Wire Line
 Text Label 2950 6250 1    50   ~ 0
 GND
 Text Label 2850 6250 1    50   ~ 0
-BTN3
-Text Label 2750 6250 1    50   ~ 0
-BTN2
-Text Label 2650 6250 1    50   ~ 0
-BTN1
-Text Label 2550 6250 1    50   ~ 0
 BTN0
+Text Label 2750 6250 1    50   ~ 0
+BTN1
+Text Label 2650 6250 1    50   ~ 0
+BTN2
+Text Label 2550 6250 1    50   ~ 0
+BTN3
 $Comp
 L Device:R R1
 U 1 1 603C4C93
@@ -841,7 +841,6 @@ NoConn ~ 800  2900
 NoConn ~ 800  2800
 NoConn ~ 800  2700
 NoConn ~ 800  2600
-NoConn ~ 800  2200
 NoConn ~ 3350 3700
 NoConn ~ 3350 3600
 NoConn ~ 3350 3500
@@ -849,8 +848,6 @@ NoConn ~ 3350 3400
 NoConn ~ 3350 3000
 NoConn ~ 3350 2900
 NoConn ~ 3350 2800
-NoConn ~ 3350 2400
-NoConn ~ 3350 2300
 Text Label 3000 3200 0    50   ~ 0
 PWMR1
 Text Label 3000 3100 0    50   ~ 0
@@ -909,4 +906,117 @@ Wire Wire Line
 Connection ~ 4200 6400
 Wire Wire Line
 	4200 6400 4200 5850
+$Comp
+L Connector_Generic:Conn_02x04_Odd_Even J13
+U 1 1 60388E75
+P 9050 3300
+F 0 "J13" H 9100 2875 50  0000 C CNN
+F 1 "ESP-01S" H 9100 2966 50  0000 C CNN
+F 2 "" H 9050 3300 50  0001 C CNN
+F 3 "~" H 9050 3300 50  0001 C CNN
+	1    9050 3300
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	8850 3400 8350 3400
+Wire Wire Line
+	9350 3100 9850 3100
+Wire Wire Line
+	8850 3300 8350 3300
+Wire Wire Line
+	8850 3200 8350 3200
+Text Label 8500 3400 0    50   ~ 0
+GND
+Text Label 9500 3400 0    50   ~ 0
+W_TXD
+Text Label 8500 3300 0    50   ~ 0
+W_GPIO2
+Text Label 9500 3300 0    50   ~ 0
+W_CH_PD
+Text Label 8500 3200 0    50   ~ 0
+W_GPIO0
+Text Label 8500 3100 0    50   ~ 0
+W_RXD
+Text Label 9500 3100 0    50   ~ 0
+3V3
+NoConn ~ 8350 3300
+NoConn ~ 8350 3200
+Wire Wire Line
+	9350 3200 9850 3200
+Text Label 9500 3200 0    50   ~ 0
+RST
+$Comp
+L Device:R R15
+U 1 1 603EBB53
+P 10150 3300
+F 0 "R15" H 10080 3254 50  0000 R CNN
+F 1 "2K" H 10080 3345 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 10080 3300 50  0001 C CNN
+F 3 "~" H 10150 3300 50  0001 C CNN
+	1    10150 3300
+	0    -1   -1   0   
+$EndComp
+Text Label 850  2200 0    50   ~ 0
+RST
+Text Label 2950 2400 0    50   ~ 0
+W_RXD
+Text Label 2950 2300 0    50   ~ 0
+W_TXD
+Wire Wire Line
+	9350 3300 10000 3300
+Wire Wire Line
+	10300 3300 10700 3300
+Text Label 10400 3300 0    50   ~ 0
+3V3
+$Comp
+L Device:R R16
+U 1 1 60413BA0
+P 8450 3850
+F 0 "R16" H 8380 3804 50  0000 R CNN
+F 1 "100K" H 8380 3895 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 8380 3850 50  0001 C CNN
+F 3 "~" H 8450 3850 50  0001 C CNN
+	1    8450 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8350 3100 8450 3100
+Wire Wire Line
+	8450 3700 8450 3100
+Connection ~ 8450 3100
+Wire Wire Line
+	8450 3100 8850 3100
+$Comp
+L Device:R R17
+U 1 1 60418DD4
+P 8600 3850
+F 0 "R17" H 8800 3800 50  0000 R CNN
+F 1 "100K" H 8850 3900 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 8530 3850 50  0001 C CNN
+F 3 "~" H 8600 3850 50  0001 C CNN
+	1    8600 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9400 3400 9400 3600
+Wire Wire Line
+	9400 3600 8600 3600
+Wire Wire Line
+	8600 3600 8600 3700
+Wire Wire Line
+	9350 3400 9400 3400
+Connection ~ 9400 3400
+Wire Wire Line
+	9400 3400 9850 3400
+Wire Wire Line
+	8450 4000 8450 4100
+Wire Wire Line
+	8450 4100 8600 4100
+Wire Wire Line
+	8600 4000 8600 4100
+Wire Wire Line
+	8600 4100 8600 4350
+Connection ~ 8600 4100
+Text Label 8600 4300 1    50   ~ 0
+3V3
 $EndSCHEMATC
