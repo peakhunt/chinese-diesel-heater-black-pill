@@ -214,6 +214,9 @@ gpio_set(gpio_out_pin_t pin, bool v)
     HAL_GPIO_WritePin(GPIOC, GPIO_PIN_15, v ? GPIO_PIN_SET : GPIO_PIN_RESET);
     break;
 
+  case gpio_out_pin_pb10:
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, v ? GPIO_PIN_SET : GPIO_PIN_RESET);
+
   default:
     return;
   }

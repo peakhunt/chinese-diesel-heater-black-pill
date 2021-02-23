@@ -65,6 +65,8 @@ void Error_Handler(void);
 #define GPIO_GLOW_PLUG_GPIO_Port GPIOC
 #define GPIO_OIL_PUMP_Pin GPIO_PIN_15
 #define GPIO_OIL_PUMP_GPIO_Port GPIOC
+#define GPIO_MOTOR_INA_Pin GPIO_PIN_10
+#define GPIO_MOTOR_INA_GPIO_Port GPIOB
 #define PWM0_Pin GPIO_PIN_8
 #define PWM0_GPIO_Port GPIOA
 #define PWM1_Pin GPIO_PIN_9

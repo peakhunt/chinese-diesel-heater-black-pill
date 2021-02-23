@@ -8,6 +8,7 @@ typedef enum
   gpio_out_pin_pc13,
   gpio_out_pin_pc14,
   gpio_out_pin_pc15,
+  gpio_out_pin_pb10,
 } gpio_out_pin_t;
 #define GPIO_MAX_OUTPUT   (gpio_out_pin_pc15 + 1)
 

@@ -89,7 +89,7 @@ fan_init(fan_t* fan, pwm_channel_t chnl, gpio_in_pin_t hall_input)
   //
   // enable motor driver
   //
-  gpio_set(gpio_out_pin_pc13, true);
+  gpio_set(gpio_out_pin_pb10, true);
 }
 
 void
