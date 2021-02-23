@@ -853,7 +853,7 @@ PWMR1
 Text Label 3000 3100 0    50   ~ 0
 PWMR2
 Text Label 850  1900 0    50   ~ 0
-M_INA
+LED
 Wire Wire Line
 	6450 3100 6300 3100
 Text Label 5950 3100 0    50   ~ 0
@@ -912,7 +912,7 @@ U 1 1 60388E75
 P 9050 3300
 F 0 "J13" H 9100 2875 50  0000 C CNN
 F 1 "ESP-01S" H 9100 2966 50  0000 C CNN
-F 2 "" H 9050 3300 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x04_P2.54mm_Vertical" H 9050 3300 50  0001 C CNN
 F 3 "~" H 9050 3300 50  0001 C CNN
 	1    9050 3300
 	1    0    0    1   
@@ -1019,4 +1019,5 @@ Wire Wire Line
 Connection ~ 8600 4100
 Text Label 8600 4300 1    50   ~ 0
 3V3
+NoConn ~ 800  1900
 $EndSCHEMATC

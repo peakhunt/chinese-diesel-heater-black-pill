@@ -834,7 +834,6 @@ Text Label 2950 2600 0    50   ~ 0
 BTN2
 Text Label 2950 2500 0    50   ~ 0
 BTN3
-NoConn ~ 800  3400
 NoConn ~ 800  3300
 NoConn ~ 800  3000
 NoConn ~ 800  2900
@@ -853,7 +852,7 @@ PWMR1
 Text Label 3000 3100 0    50   ~ 0
 PWMR2
 Text Label 850  1900 0    50   ~ 0
-M_INA
+LED
 Wire Wire Line
 	6450 3100 6300 3100
 Text Label 5950 3100 0    50   ~ 0
@@ -1019,4 +1018,7 @@ Wire Wire Line
 Connection ~ 8600 4100
 Text Label 8600 4300 1    50   ~ 0
 3V3
+NoConn ~ 800  1900
+Text Label 850  3400 0    50   ~ 0
+M_INA
 $EndSCHEMATC
