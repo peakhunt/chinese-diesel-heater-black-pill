@@ -834,7 +834,6 @@ Text Label 2950 2600 0    50   ~ 0
 BTN2
 Text Label 2950 2500 0    50   ~ 0
 BTN3
-NoConn ~ 800  3400
 NoConn ~ 800  3300
 NoConn ~ 800  3000
 NoConn ~ 800  2900
@@ -1020,4 +1019,6 @@ Connection ~ 8600 4100
 Text Label 8600 4300 1    50   ~ 0
 3V3
 NoConn ~ 800  1900
+Text Label 850  3400 0    50   ~ 0
+M_INA
 $EndSCHEMATC

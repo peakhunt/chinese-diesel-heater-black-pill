@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="D">
   <design>
-    <source>E:\sandbox\kicad\diesel-heater-black-pill\diesel-heater-black-pill.sch</source>
-    <date>2/23/2021 5:54:05 PM</date>
-    <tool>Eeschema (5.1.9)-1</tool>
+    <source>/home/hawk/sandbox/chinese-diesel-heater-black-pill/pcb/diesel-heater-black-pill.sch</source>
+    <date>Wed 24 Feb 2021 12:59:56 PM KST</date>
+    <tool>Eeschema 5.1.9-73d0e3b20d~88~ubuntu18.04.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title/>
@@ -60,7 +60,7 @@
       <tstamp>60354857</tstamp>
     </comp>
     <comp ref="R5">
-      <value>6.8K</value>
+      <value>33K</value>
       <footprint>Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder</footprint>
       <datasheet>~</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
@@ -399,10 +399,10 @@
   </libparts>
   <libraries>
     <library logical="Connector_Generic">
-      <uri>C:\Program Files\KiCad\share\kicad\library/Connector_Generic.lib</uri>
+      <uri>/usr/share/kicad/library/Connector_Generic.lib</uri>
     </library>
     <library logical="Device">
-      <uri>C:\Program Files\KiCad\share\kicad\library/Device.lib</uri>
+      <uri>/usr/share/kicad/library/Device.lib</uri>
     </library>
   </libraries>
   <nets>

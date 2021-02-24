@@ -1,8 +1,8 @@
 (export (version D)
   (design
-    (source E:\sandbox\kicad\diesel-heater-black-pill\diesel-heater-black-pill.sch)
-    (date "2/23/2021 5:54:02 PM")
-    (tool "Eeschema (5.1.9)-1")
+    (source /home/hawk/sandbox/chinese-diesel-heater-black-pill/pcb/diesel-heater-black-pill.sch)
+    (date "Wed 24 Feb 2021 12:59:53 PM KST")
+    (tool "Eeschema 5.1.9-73d0e3b20d~88~ubuntu18.04.1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
         (title)
@@ -51,7 +51,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 60354857))
     (comp (ref R5)
-      (value 6.8K)
+      (value 33K)
       (footprint Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder)
       (datasheet ~)
       (libsource (lib Device) (part R) (description Resistor))
@@ -335,9 +335,9 @@
         (pin (num 2) (name ~) (type passive)))))
   (libraries
     (library (logical Connector_Generic)
-      (uri "C:\\Program Files\\KiCad\\share\\kicad\\library/Connector_Generic.lib"))
+      (uri /usr/share/kicad/library/Connector_Generic.lib))
     (library (logical Device)
-      (uri "C:\\Program Files\\KiCad\\share\\kicad\\library/Device.lib")))
+      (uri /usr/share/kicad/library/Device.lib)))
   (nets
     (net (code 1) (name /VPWR)
       (node (ref R5) (pin 1))
