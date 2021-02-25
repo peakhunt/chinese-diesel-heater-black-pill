@@ -148,7 +148,7 @@ status_display(void)
   ssd1306_printf(5, 22, Font_7x10, ssd1306_color_white, "Glow : %s", on_off_str[heater->glow_plug.on]);
   ssd1306_printf(5, 32, Font_7x10, ssd1306_color_white, "Fan  : %s %d%%", on_off_str[heater->fan.on], heater->fan.pwr);
   ssd1306_printf(5, 42, Font_7x10, ssd1306_color_white, "OT   : %.1fC", heater->outlet_temp.temp);
-  ssd1306_printf(5, 52, Font_7x10, ssd1306_color_white, "Room : %.1fC", 0.0f); // FIXME
+  ssd1306_printf(5, 52, Font_7x10, ssd1306_color_white, "Room : %.1fC", heater->room_temp.temp);
 }
 
 static void
