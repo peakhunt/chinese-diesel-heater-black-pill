@@ -92,6 +92,7 @@ erase_program_settings_to_flash(void)
   eraseStruct.Banks         = FLASH_BANK_1;
   eraseStruct.Sector        = SETTINGS_SECTOR;
   eraseStruct.NbSectors     = 1;
+  eraseStruct.VoltageRange  = FLASH_VOLTAGE_RANGE_3;
 
   HAL_FLASH_Unlock();
 
